@@ -592,7 +592,7 @@ ul#options-menu {
         background-color: transparent;
         border-bottom: none;
         cursor: inherit;
-        padding: 12px 20px 0 20px;
+        padding: 12px @modal-padding 0 @modal-padding;
 
         h4 {
             .h1-mixin();
@@ -617,13 +617,12 @@ ul#options-menu {
     }
 
     .modal-body {
-        padding: 20px;
+        padding: @modal-padding;
     }
 
     .modal-footer {
         border: 0;
-        padding: 20px;
-        padding-top: 0;
+        padding: 0 @modal-padding @modal-padding;
     }
 
     &.right {
@@ -632,9 +631,9 @@ ul#options-menu {
         &.large {
 
             .modal-dialog {
-                width: 650px;
+                width: @modal-width-large;
 
-                @media (max-width: 650px) {
+                @media (max-width: @modal-width-large) {
                     width: 100%;
                 }
             }
@@ -648,9 +647,9 @@ ul#options-menu {
             -ms-transform: translate3d(0%, 0, 0);
             -o-transform: translate3d(0%, 0, 0);
             transform: translate3d(0%, 0, 0);
-            width: 450px;
+            width: @modal-width;
 
-            @media (max-width: 450px) {
+            @media (max-width: @modal-width) {
                 width: 100%;
             }
         }
@@ -1052,14 +1051,27 @@ span.save_widget {
 
 #help-modal {
 
-    ul.toc {
-        list-style: none;
-        padding-left: 23px;
+    .home_wrapper {
+        width: @modal-width - 2 * @modal-padding;
+    }
 
-        a,
-        a:visited,
-        a:active {
-            color: @black;
+    ul {
+        list-style: none;
+        padding-left: 5px;
+
+        &.toc {
+            padding-left: 10px;
+
+            a,
+            a:visited,
+            a:active {
+                color: @black;
+            }
+        }
+
+        li {
+            margin-left: 19px;
+            margin-bottom: 5px;
         }
     }
 
@@ -1071,6 +1083,7 @@ span.save_widget {
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin-left: -11px;
         margin-right: 6px;
         color: @color-primary;
     }
@@ -1615,4 +1628,9 @@ span.save_widget {
             }
         }
     }
+}
+
+.dropdown-menu {
+    border: none !important;
+    border-radius: 0 !important;
 }
