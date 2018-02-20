@@ -801,6 +801,20 @@ ul#options-menu {
                 }
             }
         }
+
+        .success {
+            font-size: 1.4em;
+            color: @button-green;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 30px;
+
+            .icon-checked {
+                display: block;
+                font-size: 3em;
+                line-height: 1em;
+            }
+        }
     }
 }
 
@@ -1206,12 +1220,124 @@ span.save_widget {
                 display: block;
             }
         }
-    }
 
-    .success {
-        font-size: 1.4em;
-        color: @button-green;
-        margin-bottom: 10px;
+        .new-option {
+
+            label.option {
+                .fa-pencil {
+                    display: none;
+                }
+
+                &:hover {
+
+                    cursor: pointer;
+
+                    .fa-cog {
+                        display: none;
+                    }
+                    .fa-pencil {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .spark-options {
+            padding: 0;
+            list-style: none;
+
+            > li {
+                margin: 10px 0 5px 0;
+                display: inline-block;
+                width: 100%;
+
+                ul {
+                    display: inline-block;
+                    list-style: none;
+                    vertical-align: top;
+                    padding-left: 10px;
+                    width: ~"calc(100% - 40px)";
+
+                    li {
+                        width: 100%;
+
+                        &.option {
+                            font-weight: bold
+                        }
+                    }
+                }
+
+                &.bundle {
+
+                    > ul {
+
+                        li:first-of-type {
+                            font-weight: bold;
+                            margin-top: 0;
+                        }
+
+                        > li {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+                &.editable {
+
+                    ul {
+                        li {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .fa-pencil,
+                    .remove,
+                    .fa-exclamation-circle {
+                        display: none;
+                    }
+
+                    .remove {
+                        #shared-people .remove();
+                        float: right;
+                        cursor: pointer;
+                    }
+
+                    &:hover {
+                        .fa-pencil,
+                        .remove {
+                            display: inline-block;
+                        }
+
+                        .fa-cog {
+                            display: none;
+                        }
+                    }
+
+                    &.warning {
+                        color: @button-yellow;
+
+                        .fa-exclamation-circle {
+                            display: inline-block;
+                        }
+
+                        .fa-cog {
+                            display: none;
+                        }
+
+                        &:hover {
+                            .fa-exclamation-circle {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    input {
+                        height: @size-3;
+                        width: 350px;
+                    }
+                }
+            }
+        }
     }
 
     .variables {
@@ -1229,155 +1355,6 @@ span.save_widget {
 
         b {
             font-size: 1.1em;
-        }
-    }
-
-    .special-block {
-
-        .input-block {
-
-            .edit,
-            .delete {
-                display: none;
-            }
-
-            .btn {
-                width: 36px;
-                height: 32px;
-                border: 0;
-            }
-
-            .form-control {
-                width: ~"-moz-calc(100% - 36px)";
-                width: ~"-webkit-calc(100% - 36px)";
-                width: ~"-o-calc(100% - 36px)";
-                width: ~"calc(100% - 36px)";
-                display: inline-block;
-                border-right: 0;
-                vertical-align: middle;
-            }
-
-            &.editing {
-
-                .edit,
-                .delete {
-                    display: inline-block;
-                }
-                .add {
-                    display: none;
-                }
-
-                .form-control {
-                    width: ~"-moz-calc(100% - 72px)";
-                    width: ~"-webkit-calc(100% - 72px)";
-                    width: ~"-o-calc(100% - 72px)";
-                    width: ~"calc(100% - 72px)";
-                }
-
-            }
-        }
-
-        .list-wrapper {
-            max-height: 120px;
-            position: relative;
-            overflow: hidden;
-
-            .show-more {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                margin: 0;
-                padding: 40px 0 0 0;
-                cursor: pointer;
-                background-image: linear-gradient(to bottom, transparent, white);
-
-                a:hover {
-                    text-decoration: none;
-                }
-            }
-
-            .show-less {
-                width: 100%;
-                text-align: center;
-                margin: 0;
-                padding: 15px 0;
-                cursor: pointer;
-
-                a:hover {
-                    text-decoration: none;
-                }
-            }
-
-            ul {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-
-                li {
-                    margin-top: 10px;
-                    margin-left: 0;
-                    font-size: 15px;
-                    line-height: 20px;
-                    vertical-align: middle;
-                    cursor: pointer;
-
-                    &.nxcals_option {
-                        cursor: auto;
-
-                        &:hover {
-
-                            .fa-cube,
-                            .fa-cog,
-                            .fa-cogs {
-                                display: inline-block;
-                            }
-                        }
-                    }
-
-                    &:first-of-type {
-                        padding-top: 10px;
-                    }
-
-                    &:last-of-type {
-                        padding-bottom: 10px;
-                    }
-
-                    .path {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: inline-block;
-                        vertical-align: middle;
-                        width: 90%;
-                        font-size: 13px;
-                    }
-
-                    &:hover {
-
-                        .fa-cube,
-                        .fa-cog,
-                        .fa-cogs {
-                            display: none;
-                        }
-
-                        .fa-pencil {
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .fa {
-                    margin-right: 10px;
-                    width: 16px;
-                    text-align: center;
-                }
-
-                .fa-pencil {
-                    display: none;
-                }
-            }
         }
     }
 }
@@ -1596,12 +1573,8 @@ span.save_widget {
 }
 
 .autocomplete-group {
-    padding: 2px 5px;
-
-    strong {
-        display: block;
-        border-bottom: 1px solid @black;
-    }
+    padding: 15px 5px 5px 5px;
+    font-weight: bold;
 }
 
 .autocomplete-no-suggestion {
@@ -1620,7 +1593,7 @@ span.save_widget {
         font-size: 1.1em;
         line-height: 32px;
 
-        &.error{
+        &.error {
             color: @button-red;
 
             &.warning {
@@ -1633,4 +1606,14 @@ span.save_widget {
 .dropdown-menu {
     border: none !important;
     border-radius: 0 !important;
+}
+
+#readme {
+    .panel-body {
+        padding: 30px;
+    }
+
+    .panel-heading {
+        cursor: pointer;
+    }
 }

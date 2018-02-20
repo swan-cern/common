@@ -100,3 +100,9 @@
     content: "\68";
     vertical-align: middle;
 }
+.icon-clone:before {
+  content: "\69";
+}
+.icon-checked:before {
+  content: "\6a";
+}
