@@ -78,6 +78,11 @@ h3 {
     margin-top: 0;
 }
 
+h4 {
+    font-weight: bold;
+    font-size: @size-5;
+}
+
 #notebook h1,
 #notebook h2,
 #notebook h3 {
@@ -1610,7 +1615,11 @@ span.save_widget {
 
 #readme {
     .panel-body {
-        padding: 30px;
+        padding: 0;
+
+        .wrapper {
+            padding: 30px;
+        }
     }
 
     .panel-heading {
