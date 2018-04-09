@@ -55,7 +55,7 @@ h1 {
     }
 }
 
-h2 {
+.h2() {
     .h-mixin();
     font-weight: 300;
     font-size: @size-2;
@@ -69,6 +69,10 @@ h2 {
             vertical-align: middle !important;
         }
     }
+}
+
+h2 {
+    .h2();
 }
 
 h3 {
@@ -1071,7 +1075,7 @@ span.save_widget {
 #help-modal {
 
     .home_wrapper {
-        width: @modal-width - 2 * @modal-padding;
+        max-width: @modal-width - 2 * @modal-padding;
     }
 
     ul {
@@ -1079,18 +1083,47 @@ span.save_widget {
         padding-left: 5px;
 
         &.toc {
-            padding-left: 10px;
+            padding-left: 0;
+            counter-reset: toc-counter;
 
-            a,
-            a:visited,
-            a:active {
-                color: @black;
+            > li {
+                .h2();
+                margin-left: 10px;
+                margin-top: 15px;
+                margin-bottom: 9px;
+
+                a:hover,
+                h2 a:hover {
+                    text-decoration: underline;
+                }
+
+                &:before {
+                    content: counter(toc-counter) + '.';
+                    counter-increment: toc-counter;
+                    font: inherit;
+                    font-weight: inherit;
+                    -webkit-font-smoothing: inherit;
+                    -moz-osx-font-smoothing: inherit;
+                }
+
+                > ul {
+                    margin-top: 5px;
+
+                    li {
+                        margin-left: 19px;
+                        margin-bottom: 5px;
+                        font-family: unset;
+                        font-size: @size-6;
+                        font-weight: normal;
+                    }
+
+                    a,
+                    a:visited,
+                    a:active {
+                        color: @black;
+                    }
+                }
             }
-        }
-
-        li {
-            margin-left: 19px;
-            margin-bottom: 5px;
         }
     }
 
@@ -1107,6 +1140,10 @@ span.save_widget {
         color: @color-primary;
     }
 
+    h2, h3 {
+        margin-top: 0;
+    }
+
     .nav-buttons {
         float: right;
         font-size: 20px;
@@ -1118,6 +1155,25 @@ span.save_widget {
 
     .help-content {
         margin: 20px 0;
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 28px auto;
+        }
+
+        h3, h4 {
+            margin-top: 28px;
+        }
+
+        code {
+            margin: 10px 0;
+        }
+
+        ul li {
+            margin-left: 19px;
+            margin-bottom: 5px;
+        }
     }
 
     p {
