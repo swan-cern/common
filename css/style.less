@@ -1682,3 +1682,128 @@ span.save_widget {
         cursor: pointer;
     }
 }
+
+#welcome-modal {
+    text-align: center;
+    padding: 0!important;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        width: 550px;
+
+        .modal-footer {
+            display: none;
+        }
+
+        .modal-header {
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
+    }
+
+    h1 {
+        margin-top:0;
+    }
+
+    /**
+     * (optional) define here the style definitions which should be applied on the slider container
+     * e.g. width including further controls like arrows etc.
+     */
+    .slider {
+        position: relative;
+    }
+
+    .frame {
+        /**
+         * (optional) wrapper width, specifies width of the slider frame.
+         */
+
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 280px;
+        margin: -20px -20px 20px -20px;
+        display: none;
+
+        .img {
+            height: 170px;
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+
+        .content {
+            height: 140px;
+            padding: 20px 80px 10px 80px;
+            white-space: initial;
+        }
+    }
+
+    .slides {
+        display: inline-block;
+    }
+
+    li {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+
+        /**
+         * (optional) if the content inside the slide element has a defined size.
+         */
+        width: 551px;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 75%;
+        margin-top: -25px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next svg, .prev svg {
+        width: 25px;
+    }
+
+
+    .dots {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .dots > li {
+        background-color: @grey-5;
+        display: inline-block;
+        border-radius: 4px;
+        height: 8px;
+        width: 8px;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+
+    .dots > li.active {
+        background-color: @grey-7;
+    }
+}
