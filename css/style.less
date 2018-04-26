@@ -223,7 +223,7 @@ header {
         }
     }
 
-    .control > a {
+    #header-container .row span > a {
         display: none;
     }
 }
@@ -244,7 +244,7 @@ footer {
     height: @footer-height;
     background-color: @footer-background;
     border-top: solid 1px @footer-border;
-    font-size: 13px;
+    font-size: @size-6;
 
     .container {
 
@@ -281,7 +281,7 @@ footer {
                         a:hover,
                         a:visited {
                             color: inherit;
-                            size: 13px;
+                            size: @size-6;
                             line-height: 1.42857143;
                         }
                     }
@@ -331,13 +331,14 @@ ul#options-menu {
         color: @color-primary;
         font-size: @size-4 / 2;
         vertical-align: middle;
-        padding: 0 5px 0 2px;
+        padding: 0 5px 0 7px;
     }
 }
 
 .title-bar {
     margin-top: 18px;
     margin-bottom: 9px;
+    min-height: 45px;
 
     h1 {
         margin: 0;
@@ -356,7 +357,7 @@ ul#options-menu {
         -moz-box-shadow: inset 0 0 1px @button-blue;
         -webkit-box-shadow: inset 0 0 1px @button-blue;
         box-shadow: inset 0 0 1px @button-blue;
-        font-size: 13px;
+        font-size: @size-6;
 
         &:hover {
             border-color: @color-secondary;
@@ -524,7 +525,6 @@ ul#options-menu {
 
             input {
                 margin: 0;
-                top: 2px;
                 display: none;
             }
         }
@@ -767,8 +767,8 @@ ul#options-menu {
                         margin-left: 0;
                         float: none;
                         border: none;
-                        line-height: 13px;
-                        font-size: 13px;
+                        line-height: @size-6;
+                        font-size: @size-6;
 
                         &:hover {
                             background-color: @button-red;
@@ -822,6 +822,24 @@ ul#options-menu {
                 display: block;
                 font-size: 3em;
                 line-height: 1em;
+            }
+        }
+
+        .extend_name {
+            float: right;
+            padding-top: 2px;
+        }
+
+        .extended_names {
+            .notebook_list .list_item .name {
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                -ms-word-break: break-all;
+                word-break: break-all;
+                line-height: 14px;
+                padding-top: 9px;
+                padding-bottom: 9px;
             }
         }
     }
@@ -930,6 +948,9 @@ ul#options-menu {
 span.save_widget {
     padding: 10px 5px;
     display: block;
+    height: auto;
+    margin-top: 6px;
+    box-sizing: content-box;
 
     span.filename,
     span.projectname {
@@ -1456,6 +1477,10 @@ span.save_widget {
     background-size: 100%;
 }
 
+#run_int .toolbar-btn-label {
+    display: none;
+}
+
 #share-notification {
     position: fixed;
     top: 0;
@@ -1805,5 +1830,30 @@ span.save_widget {
 
     .dots > li.active {
         background-color: @grey-7;
+    }
+}
+
+#kernel_logo_widget {
+    float: right;
+}
+
+@media (max-width: 991px) {
+
+    #ipython_notebook {
+        margin-left: 10px;
+    }
+
+    header #buttons-right-wrapper #buttons-right {
+        margin-right: 10px;
+    }
+
+    footer,
+    #menubar-container {
+        padding: 0 10px;
+    }
+
+    #share, #tree {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
