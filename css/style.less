@@ -426,7 +426,8 @@ ul#options-menu {
         border-bottom: solid 1px @grey-4;
         text-transform: uppercase;
 
-        .sort-action {
+        .sort-action,
+        .sort-action-share {
             cursor: pointer;
 
             i {
@@ -473,6 +474,7 @@ ul#options-menu {
 
         i {
             font-size: 1.2em;
+            margin: 0;
         }
 
         .status-indicators {
@@ -1855,5 +1857,12 @@ span.save_widget {
     #share, #tree {
         padding-left: 10px;
         padding-right: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .hidden-xs {
+        display: none;
     }
 }
