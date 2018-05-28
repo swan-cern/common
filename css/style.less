@@ -908,6 +908,10 @@ ul#options-menu {
                 > * {
                     line-height: 26px !important;
                 }
+
+                .toolbar-btn-label {
+                    display: none;
+                }
             }
 
             select {
@@ -1480,10 +1484,6 @@ span.save_widget {
     background-size: 100%;
 }
 
-#run_int .toolbar-btn-label {
-    display: none;
-}
-
 #share-notification {
     position: fixed;
     top: 0;
@@ -1878,6 +1878,15 @@ span.save_widget {
 @media (max-width: 992px) {
 
     .hidden-xs {
+        display: none;
+    }
+}
+
+//Fix for RISE nbextension
+.rise-enabled {
+    header,
+    footer,
+    #menubar-container {
         display: none;
     }
 }
