@@ -1484,6 +1484,19 @@ span.save_widget {
     background-size: 100%;
 }
 
+.hadoop-icon,
+.hadoop-icon:active {
+    background-image: url(../images/hadoop.svg);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+#run_int .toolbar-btn-label {
+    display: none;
+}
+
 #share-notification {
     position: fixed;
     top: 0;
@@ -1878,15 +1891,6 @@ span.save_widget {
 @media (max-width: 992px) {
 
     .hidden-xs {
-        display: none;
-    }
-}
-
-//Fix for RISE nbextension
-.rise-enabled {
-    header,
-    footer,
-    #menubar-container {
         display: none;
     }
 }
