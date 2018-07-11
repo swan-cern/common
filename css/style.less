@@ -87,6 +87,10 @@ h4 {
     font-size: @size-5;
 }
 
+p {
+    margin-bottom: 5px;
+}
+
 #notebook h1,
 #notebook h2,
 #notebook h3 {
@@ -233,7 +237,8 @@ header {
 }
 
 #tree,
-#share {
+#share,
+#normal-page {
     padding-top: 20px;
 }
 
@@ -1198,10 +1203,6 @@ span.save_widget {
         }
     }
 
-    p {
-        margin-bottom: 5px;
-    }
-
     .prev {
 
         a:before {
@@ -1876,7 +1877,7 @@ span.save_widget {
         padding: 0 10px;
     }
 
-    #share, #tree {
+    #share, #tree, #normal-page  {
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -1896,4 +1897,121 @@ span.save_widget {
     #menubar-container {
         display: none;
     }
+}
+
+.gallery-page {
+
+    .gallery {
+        margin-top: 30px;
+    }
+
+    #gallery-content {
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            padding: 20px 0;
+        }
+
+        article {
+
+            @article-size: 267px;
+            @img-height: 180px;
+            @article-padding: 4px;
+            @text-padding: 7px;
+
+            margin: 0 10px 30px 10px;
+            width: @article-size;
+            display:  inline-block;
+            vertical-align: top;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                width: @article-size - 2 * @article-padding;
+                height: @img-height - 2 * @article-padding;
+                margin: @article-padding;
+                padding: 0;
+                border: solid 1px @grey-2;
+                .transition(all .2s ease-in-out);
+            }
+
+            a, a:hover, a:active, a:visited {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            h3 {
+                height: 40px;
+                margin-top: @text-padding;
+                margin-bottom: @text-padding;
+                padding-left: 0;
+                padding-right: 2 * @article-padding + 2 * @text-padding;
+                vertical-align: top;
+                position: relative;
+                left: @article-padding;
+                overflow: hidden;
+                line-height: 20px;
+                .transition(all .2s ease-in-out);
+            }
+
+            .background {
+                opacity: 0;
+                background-color: @color-primary;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                .transition(opacity .2s ease-in-out);
+            }
+
+            &:hover {
+
+                h3 {
+                    left: @article-padding + @text-padding;
+                    color: #fff;
+                }
+
+                .background {
+                    opacity: 1;
+                }
+
+                img {
+                    border-color: @color-primary;
+                }
+            }
+        }
+    }
+
+    #libraries_list {
+        list-style: none;
+        padding-left: 15px;
+
+        li {
+
+            &.active {
+                font-weight: bold;
+            }
+
+            &:before {
+                content: '\f105';
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                margin-left: -11px;
+                margin-right: 6px;
+                color: @color-primary;
+            }
+        }
+    }
+
 }
