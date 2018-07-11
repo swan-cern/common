@@ -136,14 +136,14 @@ header {
                     i {
                         margin-right: 10px;
                         opacity: 0;
-                        transition: all .5s;
+                        .transition(all .5s);
                         position: absolute;
                         left: 12px;
                         padding-top: 5px;
                     }
 
                     .text {
-                        transition: all .5s;
+                        .transition(all .5s);
                         position: relative;
                         left: 0;
                         font-size: @menu-font-size;
@@ -482,7 +482,7 @@ ul#options-menu {
         }
 
         .actions {
-            transition: all .2s;
+            .transition(all .2s);
             opacity: 0;
             margin: 0;
             padding: 0;
@@ -729,10 +729,7 @@ ul#options-menu {
 
             .modal-dialog {
                 right: -450px;
-                -webkit-transition: opacity 0.2s linear, right 0.2s ease-out, width 0.3s ease-in-out;;
-                -moz-transition: opacity 0.2s linear, right 0.2s ease-out, width 0.3s ease-in-out;;
-                -o-transition: opacity 0.2s linear, right 0.2s ease-out, width 0.3s ease-in-out;;
-                transition: opacity 0.2s linear, right 0.2s ease-out, width 0.3s ease-in-out;
+                .transition(opacity 0.2s linear, right 0.2s ease-out, width 0.3s ease-in-out);
             }
 
             &.in .modal-dialog {
@@ -867,7 +864,7 @@ ul#options-menu {
 
     #menubar-container {
         background-color: @grey-2;
-        transition: top 0.2s ease-in-out;
+        .transition(top 0.2s ease-in-out);
 
         #menus {
             background-color: transparent;
@@ -1012,10 +1009,7 @@ span.save_widget {
 
     .taking-long {
         opacity: 0;
-        -webkit-transition: opacity 0.1s linear, right 0.1s ease-out;
-        -moz-transition: opacity 0.1s linear, right 0.1s ease-out;
-        -o-transition: opacity 0.1s linear, right 0.1s ease-out;
-        transition: opacity 0.1s linear, right 0.1s ease-out;
+        .transition(opacity 0.1s linear, right 0.1s ease-out);
     }
 }
 
