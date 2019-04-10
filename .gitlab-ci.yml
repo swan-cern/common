@@ -1,0 +1,34 @@
+
+stages:
+  - build
+  - release
+
+build-release:
+  stage: build
+  image: gitlab-registry.cern.ch/swan/docker-images/builder
+  script:
+    - echo "Building css"
+    - lessc --js --clean-css ./css/style.less ./css/style.css
+  cache:
+    key: "$CI_PIPELINE_ID"
+    paths:
+      - ./
+  tags:
+    - docker
+
+release-version:
+  stage: release
+  script:
+    - echo "Releasing $CI_COMMIT_TAG"
+    - rm -rf ./css/lesshat ./css/*.less  .gitlab-ci.yml .gitignore .git
+  cache:
+    key: "$CI_PIPELINE_ID"
+    paths:
+      - ./
+  artifacts:
+    name: $CI_COMMIT_TAG
+    paths:
+      - ./*
+    expire_in: 4 weeks
+  only: 
+      - /^v.*$/
