@@ -819,7 +819,7 @@ ul#options-menu {
             }
         }
 
-        .success {
+        .success-info {
             font-size: 1.4em;
             color: @button-green;
             margin-bottom: 10px;
@@ -1297,12 +1297,26 @@ span.save_widget {
             margin: 0;
         }
 
+        .connect-error {
+            max-height: 30%;
+            overflow: scroll;
+            word-wrap: break-word;
+
+            .header {
+                font-weight: bold;
+            }
+        }
+
         .connecting {
             height: 70%;
 
             .logs {
                 height: 100%;
                 display: block;
+            }
+
+            .header {
+                font-weight: bold;
             }
         }
 
