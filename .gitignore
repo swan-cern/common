@@ -2,3 +2,5 @@ css/style.css
 css/vars.css
 css/lesshat/lesshat.css
 css/lesshat/lesshat-prefixed.css
+yarn-error.log
+node_modules

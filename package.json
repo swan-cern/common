@@ -1,0 +1,18 @@
+{
+  "name": "@swan-cern/common-assets",
+  "version": "1.0.0",
+  "description": "Common files and CSS shared by Jupyter and Jupyterhub components of SWAN",
+  "main": "index.js",
+  "repository": "https://github.com/swan-cern/common.git",
+  "author": "SWAN Admins",
+  "license": "AGPL-3.0",
+  "private": true,
+  "scripts": {
+    "build": "lessc --js --clean-css ./css/style.less ./css/style.css"
+  },
+  "dependencies": {
+    "less": "3.9.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "lesshat": "^4.1.0"
+  }
+}
