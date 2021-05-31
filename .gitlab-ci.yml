@@ -7,7 +7,7 @@ build-release:
   image: gitlab-registry.cern.ch/swan/docker-images/builder
   script:
     - echo "Building css"
-    - lessc --js --clean-css ./css/style.less ./css/style.css
+    - yarn build
   cache:
     key: "$CI_PIPELINE_ID"
     paths:
@@ -19,7 +19,7 @@ release-version:
   stage: release
   script:
     - echo "Releasing $CI_COMMIT_TAG"
-    - rm -rf ./css/lesshat ./css/*.less  .gitlab-ci.yml .gitignore .git
+    - rm -rf ./css/lesshat ./css/*.less  .gitlab-ci.yml .gitignore .git node_modules package.json yarn.lock README.md
   cache:
     key: "$CI_PIPELINE_ID"
     paths:
