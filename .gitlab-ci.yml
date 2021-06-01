@@ -7,6 +7,7 @@ build-release:
   image: gitlab-registry.cern.ch/swan/docker-images/builder
   script:
     - echo "Building css"
+    - yarn install
     - yarn build
   cache:
     key: "$CI_PIPELINE_ID"
